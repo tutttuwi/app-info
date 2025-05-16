@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>アプリ規約管理ページ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+      font-family: 'Noto Sans JP', 'Montserrat', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background: rgba(255,255,255,0.10);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+      backdrop-filter: blur(6px);
+      padding: 48px 32px;
+      text-align: center;
+      max-width: 420px;
+    }
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      letter-spacing: 2px;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 32px;
+      color: #e0e0e0;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 32px;
+      background: #fff;
+      color: #4e54c8;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px rgba(78,84,200,0.15);
+    }
+    .btn:hover {
+      background: #4e54c8;
+      color: #fff;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 32px 12px;
+        max-width: 95vw;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>App Info Portal</h1>
+    <p>
+      このページは、アプリの利用規約やプライバシーポリシーなど、<br>
+      各種規約情報を一元管理・公開するためのポータルです。
+    </p>
+    <a href="#terms" class="btn">規約一覧を見る</a>
+  </div>
+</body>
+</html>
