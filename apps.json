@@ -1,0 +1,34 @@
+{
+  "apps": [
+    {
+      "id": "med-info-tech",
+      "title": "医療情報技師対策道場",
+      "description": "医療情報技師資格取得のためのアプリ",
+      "image": "assets/images/med-info-tech.png",
+      "icon": "assets/images/med-info-tech-icon.png",
+      "features": [
+        "これまでの過去問を解ける！",
+        "独自の解説",
+        "復習機能",
+        "再確認マークをつけられる"
+      ],
+      "category": "資格対策",
+      "downloadUrl": "#"
+    },
+    {
+      "id": "simple-pedometer",
+      "title": "シンプル万歩計",
+      "description": "シンプルで使いやすい歩数計アプリ",
+      "image": "assets/images/simple-pedometer.png",
+      "icon": "assets/images/simple-pedometer-icon.png",
+      "features": [
+        "自動歩数計測",
+        "日別・月別統計",
+        "目標設定機能",
+        "バッテリー効率化"
+      ],
+      "category": "健康",
+      "downloadUrl": "#"
+    }
+  ]
+} 

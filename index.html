@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>アプリ規約管理ページ</title>
+  <title>アプリ紹介ページ</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
@@ -13,66 +13,232 @@
       background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
       font-family: 'Noto Sans JP', 'Montserrat', sans-serif;
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
     }
-    .container {
-      background: rgba(255,255,255,0.10);
-      border-radius: 24px;
-      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
-      backdrop-filter: blur(6px);
-      padding: 48px 32px;
+    
+    .header {
       text-align: center;
-      max-width: 420px;
+      padding: 48px 20px;
     }
+    
     h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 16px;
       letter-spacing: 2px;
     }
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 32px;
+    
+    .subtitle {
+      font-size: 1.3rem;
+      color: #e0e0e0;
+      margin-bottom: 0;
+    }
+    
+    .apps-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 48px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+    }
+    
+    .app-card {
+      background: rgba(255,255,255,0.10);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+      backdrop-filter: blur(6px);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .app-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 48px 0 rgba(31,38,135,0.5);
+    }
+    
+    .app-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: linear-gradient(45deg, #4e54c8, #8f94fb);
+    }
+    
+    .app-icon {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      background: linear-gradient(45deg, #4e54c8, #8f94fb);
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    .app-content {
+      padding: 24px;
+    }
+    
+    .app-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    
+    .app-category {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+    }
+    
+    .app-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
       color: #e0e0e0;
     }
-    .btn {
+    
+    .app-features {
+      margin-bottom: 24px;
+    }
+    
+    .features-title {
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .features-list li {
+      font-size: 0.9rem;
+      color: #e0e0e0;
+      margin-bottom: 4px;
+      padding-left: 16px;
+      position: relative;
+    }
+    
+    .features-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #4e54c8;
+      font-weight: bold;
+    }
+    
+    .app-button {
       display: inline-block;
-      padding: 12px 32px;
+      padding: 12px 24px;
       background: #fff;
       color: #4e54c8;
       border-radius: 999px;
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 0.9rem;
       text-decoration: none;
       transition: background 0.2s, color 0.2s;
       box-shadow: 0 2px 8px rgba(78,84,200,0.15);
     }
-    .btn:hover {
+    
+    .app-button:hover {
       background: #4e54c8;
       color: #fff;
     }
-    @media (max-width: 600px) {
-      .container {
-        padding: 32px 12px;
-        max-width: 95vw;
+    
+    .loading {
+      text-align: center;
+      padding: 48px;
+      font-size: 1.2rem;
+    }
+    
+    @media (max-width: 768px) {
+      .apps-container {
+        grid-template-columns: 1fr;
+        padding: 0 16px 32px;
       }
+      
       h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
+      }
+      
+      .header {
+        padding: 32px 16px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>App Info Portal</h1>
-    <p>
-      このページは、アプリの利用規約やプライバシーポリシーなど、<br>
-      各種規約情報を一元管理・公開するためのポータルです。
-    </p>
-    <a href="#terms" class="btn">規約一覧を見る</a>
+  <div class="header">
+    <h1>My Apps</h1>
+    <p class="subtitle">作成したアプリケーションの紹介</p>
   </div>
+  
+  <div id="apps-container" class="apps-container">
+    <div class="loading">アプリ情報を読み込み中...</div>
+  </div>
+
+  <script>
+    async function loadApps() {
+      try {
+        const response = await fetch('apps.json');
+        const data = await response.json();
+        displayApps(data.apps);
+      } catch (error) {
+        console.error('アプリ情報の読み込みに失敗しました:', error);
+        document.getElementById('apps-container').innerHTML = 
+          '<div class="loading">アプリ情報の読み込みに失敗しました</div>';
+      }
+    }
+
+    function displayApps(apps) {
+      const container = document.getElementById('apps-container');
+      
+      if (apps.length === 0) {
+        container.innerHTML = '<div class="loading">アプリが登録されていません</div>';
+        return;
+      }
+      
+      const appsHTML = apps.map(app => {
+        // アイコンが指定されている場合はアイコンを、そうでなければ画像を使用
+        const imageSrc = app.icon || app.image;
+        const imageClass = app.icon ? 'app-icon' : 'app-image';
+        
+        console.log(`Loading image for ${app.title}:`, imageSrc);
+        
+        return `
+        <div class="app-card">
+          <img src="${imageSrc}" alt="${app.title}" class="${imageClass}" onerror="this.onerror=null; this.src='${app.image}'; this.className='app-image'; console.log('Falling back to image:', this.src);" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; console.log('All images failed to load');">
+          <div class="app-image-fallback" style="display: none; width: 100%; height: 200px; background: linear-gradient(45deg, #4e54c8, #8f94fb); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; color: white;">
+            ${app.title}
+          </div>
+          <div class="app-content">
+            <div class="app-category">${app.category}</div>
+            <h3 class="app-title">${app.title}</h3>
+            <p class="app-description">${app.description}</p>
+            
+            <div class="app-features">
+              <div class="features-title">主な機能</div>
+              <ul class="features-list">
+                ${app.features.map(feature => `<li>${feature}</li>`).join('')}
+              </ul>
+            </div>
+            
+            <a href="${app.downloadUrl}" class="app-button">詳細を見る</a>
+          </div>
+        </div>
+        `;
+      }).join('');
+      
+      container.innerHTML = appsHTML;
+    }
+
+    // ページ読み込み時にアプリ情報を読み込む
+    document.addEventListener('DOMContentLoaded', loadApps);
+  </script>
 </body>
 </html>
